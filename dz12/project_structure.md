@@ -1,7 +1,3 @@
-# Automated Test Project Structure
-
-This document defines the proposed test-project tree only. Test implementations are intentionally omitted.
-
 ```text
 tests/srg-qa/
 ├── README.md
