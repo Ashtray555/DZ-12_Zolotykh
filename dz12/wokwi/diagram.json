@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "DZ-12 Zolotykh",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -20, "left": 250, "attrs": { "temperature": "25", "humidity": "45" } },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr", "top": 150, "left": 250, "attrs": {} },
+    { "type": "wokwi-led", "id": "led", "top": 30, "left": 430, "attrs": { "color": "red", "label": "ALARM" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 110, "left": 430, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:3V3", "dht:VCC", "red", [] ],
+    [ "esp:GND.1", "dht:GND", "black", [] ],
+    [ "esp:4", "dht:SDA", "green", [] ],
+    [ "esp:3V3", "ldr:VCC", "red", [] ],
+    [ "esp:GND.2", "ldr:GND", "black", [] ],
+    [ "esp:5", "ldr:AO", "blue", [] ],
+    [ "esp:2", "r1:1", "green", [] ],
+    [ "r1:2", "led:A", "green", [] ],
+    [ "led:C", "esp:GND.3", "black", [] ]
+  ],
+  "dependencies": {},
+  "serialMonitor": {
+    "display": "always",
+    "collapse": false,
+    "newline": "lf"
+  }
+}
